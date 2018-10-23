@@ -1,27 +1,25 @@
-package com.learning.jpa.entity;
+package com.learning.jpa.relations.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.ManyToOne;
 
 @Entity
-@Table
-@NamedQuery(query = "select e from Employee e where e.eid = :id",name = "find employee by id")
-
-public class Employee {
-	
+public class Employe {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	
 	private int eid;
 	private String ename;
 	private double salary;
 	private String deg;
 	
-	public Employee(int eid, String ename, double salary, String deg) {
+	@ManyToOne
+	private Department department;
+
+	public Employe(int eid, String ename, double salary, String deg) {
 		super();
 		this.eid = eid;
 		this.ename = ename;
@@ -29,7 +27,7 @@ public class Employee {
 		this.deg = deg;
 	}
 	
-	public Employee() {
+	public Employe() {
 		super();
 	}
 
@@ -64,5 +62,14 @@ public class Employee {
 	public void setDeg(String deg) {
 		this.deg = deg;
 	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	
 	
 }

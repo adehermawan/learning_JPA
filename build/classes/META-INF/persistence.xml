@@ -2,6 +2,17 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="learning_JPA">
 	<class>com.learning.jpa.entity.Employee</class>
+	<class>com.learning.jpa.entity.Staff</class>
+	<class>com.learning.jpa.entity.TeachingStaff</class>
+	<class>com.learning.jpa.entity.NonTeachingStaff</class>
+	<class>com.learning.jpa.entity.Student</class>
+	<class>com.learning.jpa.entity.TrainingStudent</class>
+	<class>com.learning.jpa.entity.NonTrainingStudent</class>
+	<class>com.learning.jpa.entity.Teacher</class>
+	<class>com.learning.jpa.entity.HonorerTeacher</class>
+	<class>com.learning.jpa.entity.FixedTeacher</class>
+	<class>com.learning.jpa.relations.entity.Employe</class>
+	<class>com.learning.jpa.relations.entity.Department</class>
 	
 	<properties>
 	<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpadb"/>
